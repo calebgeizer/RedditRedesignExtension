@@ -1,0 +1,35 @@
+{
+    "name": "Reddit Redesign Extension",
+    "description": "An extension that implements a redesign for the old reddit website.",
+    "version": "0.1",
+    "icons": {
+        "96" : "favicon-96x96.png"
+    },
+    "permissions": [
+    "tabs","<all_urls>","activeTab"
+    ],
+    "browser_action": {
+      "default_icon": "favicon-96x96.png"
+    },
+    "content_scripts": [
+        {
+        "matches": [
+            "https://*.reddit.com/",
+            "https://*.reddit.com/new/",
+            "https://*.reddit.com/rising/",
+            "https://*.reddit.com/controversial/",
+            "https://*.reddit.com/top/",
+            "https://*.reddit.com/me/m/*",
+            "https://*.reddit.com/explore",
+            "https://*.reddit.com/r/all/*",
+            "https://*.reddit.com/r/mod/*",
+            "https://*.reddit.com/user/*",
+            "https://*.reddit.com/r/popular/*",
+            "https://*.reddit.com/r/friends/*"
+            ],
+        "js": ["content.js"],
+        "run_at": "document_end"         // pay attention to this line
+        }
+    ], 
+    "manifest_version":2
+}
